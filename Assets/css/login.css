@@ -21,7 +21,7 @@ body{
 body::after{
     content: "";
 position: absolute;
-background: url(/Assets/images/login_page_background.jpg);
+/* background: url(/Assets/images/login_page_background.jpg); */
 z-index: -1;
 top: 0;
 left: 0;
