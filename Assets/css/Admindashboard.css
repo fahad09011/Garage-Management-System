@@ -5,31 +5,30 @@
 }
 body{
     /* height: 100%; */
+    background-color: #f5f5f5;
 }
 :root{
     --container_padding:10px;
 
     --borderradius:10px;
-    --first_color: #acd80b;
-    --second_color:#B2C8BA;
-    --third_color:#D2E3C8;
-    --fourth_color:#EBF3E8;
+    --first_color: #dee33e;
+    --second_color:#9fa324;
+    --third_color:#ffffff;
+    --fourth_color:#000000;
     --background_color:rgba(228, 225, 225, 0.415);
 }
 .admin_dashboard_main{
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items:s */
-    /* justify-content: space-around; */
-    position: relative;
+    
+    /* position: relative; */
 }
 .dashboard_header{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    z-index: -1;
+    background-color: var(--third_color);
+    /* z-index: -1; */
     width: calc(100% - 250px);
     margin-left:250px ;
 }
@@ -60,11 +59,13 @@ body{
 }
 /* sidebar */
 .dashboard_sidebar{
+    /* display: none; */
+    /* color: aqua; */
     position: absolute;
     top: 0;
-    background-color: var(--background_color);
+    background-color:var(--third_color);
     
-    border: 2px solid rebeccapurple;
+    /* border: 2px solid rebeccapurple; */
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -81,7 +82,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    border:2px solid red;
+    /* border:2px solid red; */
     width: 100%;
     padding: var(--container_padding);
     gap: 10px;
@@ -101,7 +102,7 @@ body{
 }
 /* navabr */
 .dashboard_navbar{
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .dashboard_navbar ul, li, a {
     text-decoration: none;
@@ -120,13 +121,26 @@ body{
 }
 ul li{
     padding: 10px ;
-    background-color: violet;
+    /* background-color: violet; */
     border-radius: var(--borderradius);
+    cursor: pointer;
+    /* padding: px;
+     */
+     /* margin: ; */
 }
+
 ul li:hover{
-background-color: #B2C8BA;
+background-color: var(--second_color);
 }
 .icon{
     color: var(--first_color);
     font-size: x-large;
+}
+/* dashboard section */
+.dashboard_Section{
+    border: 2px solid red;
+    width: calc(100% - 250px);
+    margin-left:250px ;
+    /* height: ; */
+    
 }

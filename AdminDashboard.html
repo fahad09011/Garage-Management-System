@@ -7,6 +7,7 @@
     <title>GMS|Admin Dashboard</title>
     <link rel="stylesheet" href="/Assets/css/Admindashboard.css" />
     <script src="https://kit.fontawesome.com/0cd0283581.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -42,24 +43,50 @@
             <nav class="dashboard_navbar">
                 <ul>
                     <li><i class="fa-solid fa-chart-line icon"></i>
-                        <a href="#">Dashboard</a></li>
+                        <a href="#">Dashboard</a>
+                    </li>
 
                     <li><i class="fa-regular fa-calendar-days icon"></i><a href="#"> Bookings Menu</a></li>
                     <li><i class="fa-solid fa-screwdriver-wrench icon"></i>
-                        <a href="#"> Jobs Menu</a></li>
+                        <a href="#"> Jobs Menu</a>
+                    </li>
                     <li><i class="fa-solid fa-dolly icon"></i><a href="#"> Stock Control Menu</a></li>
-                   
+
                     <li><i class="fa-solid fa-truck-field icon"></i>
-                        <a href="#"> Supplier Accounts Menu</a></li>
-                    <li><i class="fa-solid fa-file-pen icon"></i><a href="#"> File Maintenance Menu</a></li>
+                        <a href="#"> Supplier Accounts Menu</a>
+                    </li>
+                    <li><i class="fa-solid fa-file-pen icon"></i><a href="file_maintainance.html"> File Maintenance
+                            Menu</a></li>
                     <li><i class="fa-solid fa-square-poll-vertical icon"></i>
-                        <a href="#"> Reports Menu</a></li>
+                        <a href="#"> Reports Menu</a>
+                    </li>
                     <li><i class="fa-solid fa-person-walking-arrow-right icon"></i>
-                        <a href="#">Exit</a></li>
+                        <a href="#">Exit</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </main>
+    <!-- dashboard section -->
+    <section class="dashboard_Section">
+        <div class="dashboard_main_container">
+            <!-- weekly booking income container -->
+            <div class="top_dashboard">
+                <!-- income -->
+                <div class="income_container">
+                    <div class="income__container_title">&euro;
+                        Net Income</div>
+                    <div class="income_status">
+                        <h2 class="income">&euro; 874,98
+                        </h2>
+                        <p><span>-0.5%</span>from last week</p>
+                    </div>
+                    <div id="container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/Assets/js/admin_dashboard.js"></script>
 </body>
 
 </html>
