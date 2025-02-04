@@ -11,47 +11,49 @@
 </head>
 
 <body>
+    <!-- main container with display grip to handle the layout of page -->
+    <div class="main_container">
 
 
 
-    <!-- sidebar -->
-    <div class="dashboard_sidebar">
-        <div class="logo_name_Container">
-            <i class="fa-solid fa-screwdriver-wrench logo"></i>
 
-            <!-- <img src="/Assets/images/login_page_logo.png" alt="logo" class="logo" /> -->
-            <h1 class="name">AutoSphere</h1>
-        </div>
-        <!-- sidebar navba -->
-        <nav class="dashboard_navbar">
-            <ul>
-                <li><i class="fa-solid fa-chart-line icon"></i>
-                    <a href="#">Dashboard</a>
-                </li>
 
-                <li><i class="fa-regular fa-calendar-days icon"></i><a href="#"> Bookings Menu</a></li>
-                <li><i class="fa-solid fa-screwdriver-wrench icon"></i>
-                    <a href="#"> Jobs Menu</a>
-                </li>
-                <li><i class="fa-solid fa-dolly icon"></i><a href="#"> Stock Control Menu</a></li>
+        <!-- sidebar -->
+        <aside class="dashboard_sidebar">
+            <div class="logo_name_Container">
+                <i class="fa-solid fa-screwdriver-wrench logo"></i>
 
-                <li><i class="fa-solid fa-truck-field icon"></i>
-                    <a href="#"> Supplier Accounts Menu</a>
-                </li>
-                <li><i class="fa-solid fa-file-pen icon"></i><a href="file_maintainance.html"> File Maintenance
-                        Menu</a></li>
-                <li><i class="fa-solid fa-square-poll-vertical icon"></i>
-                    <a href="#"> Reports Menu</a>
-                </li>
-                <li><i class="fa-solid fa-person-walking-arrow-right icon"></i>
-                    <a href="#">Exit</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+                <!-- <img src="/Assets/images/login_page_logo.png" alt="logo" class="logo" /> -->
+                <h1 class="name">AutoSphere</h1>
+            </div>
+            <!-- sidebar navba -->
+            <nav class="dashboard_navbar">
+                <ul>
+                    <li><i class="fa-solid fa-chart-line icon"></i>
+                        <a href="#">Dashboard</a>
+                    </li>
 
-    <!-- main with header and dashboard content -->
-    <main class="admin_dashboard_main">
+                    <li><i class="fa-regular fa-calendar-days icon"></i><a href="#"> Bookings Menu</a></li>
+                    <li><i class="fa-solid fa-screwdriver-wrench icon"></i>
+                        <a href="#"> Jobs Menu</a>
+                    </li>
+                    <li><i class="fa-solid fa-dolly icon"></i><a href="#"> Stock Control Menu</a></li>
+
+                    <li><i class="fa-solid fa-truck-field icon"></i>
+                        <a href="#"> Supplier Accounts Menu</a>
+                    </li>
+                    <li><i class="fa-solid fa-file-pen icon"></i><a href="file_maintainance.html"> File Maintenance
+                            Menu</a></li>
+                    <li><i class="fa-solid fa-square-poll-vertical icon"></i>
+                        <a href="#"> Reports Menu</a>
+                    </li>
+                    <li><i class="fa-solid fa-person-walking-arrow-right icon"></i>
+                        <a href="#">Exit</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
         <!-- header -->
         <header class="dashboard_header">
             <!-- left header -->
@@ -63,7 +65,7 @@
             <!-- centre header -->
             <div class="center_header">
                 <input type="search" placeholder="Search" />
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
             </div>
             <!-- right header -->
             <div class="right_header">
@@ -73,96 +75,119 @@
         </header>
 
 
-
-        <!-- dashboard section -->
-        <section class="dashboard_content_Section">
-            <div class="dashboard_main_container">
-                <!-- weekly booking income container -->
-                <div class="top_dashboard">
-
-                    <!-- income -->
-                    <div class="income_container">
+        <!-- main dashboard content -->
+        <main class="admin_dashboard_main">
 
 
-                        <div class="income_status">
-                            <div class="income_status_sub_container">
+            <!-- dashboard section -->
+            <section class="dashboard_content_Section">
+                <div class="dashboard_main_container">
+                    <!-- weekly booking income container -->
+                    <div class="top_dashboard">
 
-                                <h2 class="income"><i class="fa-solid fa-coins icon currency"></i>
-                                    874,98
-                                </h2>
-                                <p><span>-0.5%</span>from last week</p>
+                        <!-- income -->
+                        <div class="graph_container gc1">
+
+
+                            <div class="income_status">
+                                <div class="income_status_sub_container">
+
+                                    <h2 class="income"><i class="fa-solid fa-coins icon currency"></i>
+                                        874,98
+                                    </h2>
+                                    <p><span>-0.5%</span>from last week</p>
+                                </div>
+
+
+                                <div id="graph_container1"></div>
                             </div>
 
 
-                            <div id="graph_container1"></div>
+
                         </div>
 
+                        <!-- customer  -->
+                        <div class="graph_container gc2">
 
 
-                    </div>
+                            <div class="income_status">
+                                <div class="income_status_sub_container">
 
-                    <!-- customer  -->
-                    <div class="income_container">
+                                    <h2 class="income"><i class="fa-solid fa-users  currency"></i>
+
+                                        874,98
+                                    </h2>
+                                    <p><span>+0.5%</span>from last week</p>
+                                </div>
 
 
-                        <div class="income_status">
-                            <div class="income_status_sub_container">
-
-                                <h2 class="income"><i class="fa-solid fa-users  currency"></i>
-
-                                    874,98
-                                </h2>
-                                <p><span>+0.5%</span>from last week</p>
+                                <div id="graph_container2"></div>
                             </div>
 
 
-                            <div id="graph_container2"></div>
+
                         </div>
 
+                        <!-- income -->
+                        <div class="graph_container gc3">
 
 
-                    </div>
+                            <div class="income_status">
+                                <div class="income_status_sub_container">
 
-                    <!-- income -->
-                    <div class="income_container">
+                                    <h2 class="income"><i class="fa-solid fa-truck icon currency"></i>
+                                        </i>
+                                        12
+                                    </h2>
+                                    <p><span>-0.5%</span>from last week</p>
+                                </div>
 
 
-                        <div class="income_status">
-                            <div class="income_status_sub_container">
-
-                                <h2 class="income"><i class="fa-solid fa-truck icon currency"></i>
-                                    </i>
-                                    12
-                                </h2>
-                                <p><span>-0.5%</span>from last week</p>
+                                <div id="graph_container3"></div>
                             </div>
 
 
-                            <div id="graph_container3"></div>
+
                         </div>
 
+                    </div>
+                </div>
 
+                <div class="dashboard_recent_booking_container">
+                    <div class="heading_container">
+                        <h2 class="heading">Recent booking</h2>
+                    </div>
+                    <div class="dashboard_booking_table_container">
+                        <table class="table">
+                            <tr>
+                                <th>No</th>
+                                <th>BOoking</th>
+                                <th>Customers</th>
+                                <th>Status</th>
+                                <th>Price</th>
+                                <th>Mechanic ID </th>
+                            </tr>
+
+                            <tr>
+                                <td>01</td>
+                                <td>23-10-1990 <p class="booking_id">
+                                        #045
+                                    </p>
+                                </td>
+                                <td>Mushi <p class="cust_id">#01</p>
+                                </td>
+                                <td>23</td>
+                                <td>Pending</td>
+                                <td>91.98</td>
+                            </tr>
+
+                        </table>
 
                     </div>
-
                 </div>
-            </div>
+            </section>
 
-            <div class="dashboard_recent_booking_container">
-                <div class="heading_container">
-                    <h2 class="heading">Recent booking</h2>
-                </div>
-                <div class="dashboard_booking_table_container">
-                    <table style="width:100%">
-                        <tr>
-                          <th>BOoking ID</th>
-                          <th>BOoking Date</th>
-                          <th>Customer Name</th>
-                          <th>Customer ID</th>
-                          <th>Status</th>
-                          <th>Price</th>
-                          <th>Mechanic ID </th>
-                        </tr>
+        </main>
 
 
 
@@ -179,76 +204,9 @@
 
 
 
+        <footer class="footer">im footer</footer>
+    </div>
 
-
-
-
-
-
-
-
-                        
-
-
-
-
-
-
-                        <tr>
-                          <td>12</td>
-                          <td>23-4-1998</td>
-                          <td>Mushi</td>
-                          <td>23</td>
-                          <td>Pending</td>
-                          <td>2321</td>
-                          <td>01</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>12</td>
-                            <td>23-4-1998</td>
-                            <td>Mushi</td>
-                            <td>23</td>
-                            <td>Pending</td>
-                            <td>2321</td>
-                            <td>01</td>
-                          </tr>
-                          <tr>
-                            <td>12</td>
-                            <td>23-4-1998</td>
-                            <td>Mushi</td>
-                            <td>23</td>
-                            <td>Pending</td>
-                            <td>2321</td>
-                            <td>01</td>
-                          </tr>
-                          <tr>
-                            <td>12</td>
-                            <td>23-4-1998</td>
-                            <td>Mushi</td>
-                            <td>23</td>
-                            <td>Pending</td>
-                            <td>2321</td>
-                            <td>01</td>
-                          </tr>
-                          <tr>
-                            <td>12</td>
-                            <td>23-4-1998</td>
-                            <td>Mushi</td>
-                            <td>23</td>
-                            <td>Pending</td>
-                            <td>2321</td>
-                            <td>01</td>
-                          </tr>
-                                
-                          
-                      </table>
-                      
-                </div>
-            </div>
-        </section>
-
-    </main>
 
     <script src="/Assets/js/admin_dashboard.js"></script>
 </body>
