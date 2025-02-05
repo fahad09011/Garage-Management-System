@@ -35,74 +35,6 @@ grid-template-areas:
 }
 
 /* sidebar */
-.dashboard_sidebar{
-    grid-area: sidebar;
-   
-    background-color:var(--fourth_color); 
-    /* border: 2px solid rebeccapurple; */
-    display: flex;
-    flex-direction: column;
-    /* height: 100vh; */
-    gap: 60px; 
-
-
-}
-.logo_name_Container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-   
-    width: 100%;
-    padding: var(--container_padding);
-    gap: 10px;
-}
-
-.logo{
-    font-size: 4rem;
-    color: var(--first_color);
-    
-
-}
-.logo_name_Container .name{
-    font-size: 1rem;
-}
-/* navabr */
-
-.dashboard_navbar ul, li, a {
-    text-decoration: none;
-    list-style: none;
-    color: black;
-    font-weight: bold;
-    /* background-color: ; */
-}
-.dashboard_navbar ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-   
-}
-ul li{
-    padding: 10px ;
-   
-    border-radius: var(--borderradius);
-    cursor: pointer;
-    
-}
-
-ul li:hover{
-background-color: var(--second_color);
-}
-.icon{
-    color: var(--first_color);
-    font-size: x-large;
-}
-.currency{
-    color: var(--second_color);
-}
-
-
 
 
 
@@ -162,22 +94,20 @@ input::placeholder{
 .dashboard_content_Section{
 /* width: 100%; */
 /* margin: 30px; */
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 20px;
     /* box-sizing: border-box; */
 }
 .top_dashboard{
     display: grid;
-    
-grid-template-columns: repeat(3, 350px
-);
+    /* border: 2px solid rebeccapurple; */
+grid-template-columns: repeat(3, 350px);
 grid-template-areas: 
 "graph1 graph2 graph3";
     column-gap: 10px;
-
   justify-content: space-around; 
   
-    padding: 10px;
+    /* padding: 10px; */
     /* border: 2px solid black; */
     margin: 10px 0;
 }
@@ -196,6 +126,8 @@ grid-template-areas:
     background-color: var(--fourth_color);
     /* border: 2px solid palegreen; */
     padding: 10px;
+    
+border-radius: 10px;
 }
 .gc1{
 grid-area: graph1;
@@ -222,6 +154,8 @@ p span{
 /* recent booking table */
 .dashboard_recent_booking_container{
     background-color: var(--fourth_color);
+    
+border-radius: 10px;
     /* box-sizing:content-box; */
     /* width: 80%; */
     /* border: 2px solid rebeccapurple; */
@@ -255,7 +189,11 @@ th, td {
 }
 th{
     
+}
+.table-tit{
     border:2px solid black;
+    /* position:fixed; */
+    /* top: 0; */
 }
 td{
     /* padding-left: 15px; */
