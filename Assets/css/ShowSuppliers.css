@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Add Supplier Form CSS */
+.main_form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    width: 100%;
+
+    border: 2px solid red;
+
+}
+.form{
+    width: 80%;
+    background-color: bisque;
+    border: 2px solid black;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+    ;
+    /* justify-content: space-around; */
+    
+}
+.form_title{
+    border: 2px solid yellow;
+    text-align: left;
+    padding: 10px;
+    
+}
+
+input[type=text],input[type=email],input[type=text],input[type=text]{
+    padding: 5px;
+}
