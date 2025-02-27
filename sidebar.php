@@ -99,7 +99,7 @@
                     </li>
 
                     <li>
-                        <a href="#">Add a New Supplier</a>
+                        <a href="#" id="addSupplierButton">Add a New Supplier</a>
                     </li>
 
                     <li>

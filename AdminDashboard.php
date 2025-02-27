@@ -1,3 +1,22 @@
+<!--  before add supplier ask for confirmatio  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +35,9 @@
 <body>
     <!-- main container with display grip to handle the layout of page -->
     <div class="main_container">
-        <?php include 'header.php'; 
+        <?php include 'header.php';
         ?>
-        <?php include 'sidebar.php'; 
+        <?php include 'sidebar.php';
         ?>
 
 
@@ -27,7 +46,7 @@
 
 
             <!-- dashboard section -->
-            <section class="dashboard_content_Section">
+            <section class="dashboard_content_Section" id="dashboard_content">
                 <div class="dashboard_main_container">
                     <!-- weekly booking income container -->
                     <div class="top_dashboard">
@@ -127,24 +146,25 @@
                                 <td>Pending</td>
                                 <td>91.98</td>
                             </tr>
-                        
-                           
-                          
+
+
+
 
                         </table>
 
                     </div>
                 </div>
             </section>
-
+            <!-- suppiler form container here we will show form dynamically -->
+            <div id="dynamicsupplierform"></div>
         </main>
 
         <footer class="footer">im footer</footer>
     </div>
 
 
-    <script src="/Assets/js/side_bar.js"></script>
-    <script src="/Assets/js/admin_dashboard.js"></script>
+    <script src="./Assets/js/side_bar.js"></script>
+    <script src="./Assets/js/admin_dashboard.js"></script>
 </body>
 
 </html>

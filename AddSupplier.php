@@ -20,6 +20,7 @@ try {
     if($insert->execute())
         {
         echo "<h2>Data is inseeted to database successfully.</h2>";
+
         }
     else
         {
