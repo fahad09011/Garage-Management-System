@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,35 +10,47 @@
 
 <body>
     <main class="main_form_container">
+        <div class="div">
+        <div class="form_title">
+            <h1>Add Suppiler</h1>
+        </div>
         <form action="AddSupplier.php" method="post" id="form" class="form">
-            <div class="form_title">
-                <h1>Add Suppiler</h1>
-            </div>
+
             <!-- name -->
+             <div class="inputMain">
             <label for="supplier_name">Supplier's Name: </label>
             <input type="text" id="supplier_name" placeholder="Enter supplier's name" name="name" required>
+            </div>
+
 
             <!-- Email -->
+             <div class="inputMain">
             <label for="supplier_email">Supplier's Email: </label>
             <input type="email" id="supplier_email" placeholder="Enter supplier's email" name="email" required>
+            </div>
 
             <!--  telephone-->
+              <div class="inputMain">
             <label for="supplier_telephone">Supplier's Telephone: </label>
             <input type="text" id="supplier_telephone" placeholder="Enter supplier's Telephone" name="telephone">
+            </div>
 
             <!-- Address -->
+             <div class="inputMain">
             <label for="supplier_address">Supplier's Address: </label>
             <input type="text" id="supplier_address" placeholder="Enter supplier's address" name="address">
-
+            </div>
             <!-- Form Buttons -->
             <div class="form_buttons">
-                <input type="reset" value="Cancel">
-                <input type="submit" value="Add Supplier">
+                <input type="reset" value="Cancel" class="formButton">
+                <input type="submit" value="Add Supplier" class="formButton">
             </div>
             <!-- success /error message will show here -->
             <p id="message"></p>
         </form>
+        </div>
     </main>
+    <script src="./Assets/js/supplierFormValidation.js"></script>
 </body>
 
 </html>

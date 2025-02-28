@@ -59,23 +59,33 @@ function_to_create_chart('#graph_container3',datasource3,'Weekly Deliveries','de
 // from here the javaScript (AJAX start) for dynamically  display addSupplier form in dashboard ||| And also for send data to database through AJAX
 document.addEventListener("DOMContentLoaded",()=>{
 
-
+// {====== ponit to be notes=====} > now we dont need to create multiple AJAX beacuse we make it re-usable 
+// here "event is the perameter of function"
+// we event delegation: Event delegation is a technique in JavaScript where you attach a single event listener to a parent element instead of adding event listeners to multiple child elements. This takes advantage of event bubbling, which allows the event to "bubble up" from a child element to its parent. 
     let sidebar = document.querySelector(".dashboard_sidebar");
     sidebar.addEventListener("click",(event)=>{
-    if (event.target.id==="addSupplierButton") {
-    event.preventDefault();
-    display_supplier_form();
+    if (event.target.classList.contains("load-file")) {
+        let file_links = event.target.getAttribute("file-link")
+        if (!file_links) {
+            alert("This button is not activate yet!.")
+            return;
+        }
+        else{
+
+            event.preventDefault();
+            display_supplier_form(file_links);
+        }
     }
     });
 
 
 
     // this function is for display the form and hide the dahsboard content which is initialy display in dashboard
-    let display_supplier_form = ()=>{
+     let display_supplier_form =(file)=>{
 
         // here AJAX start for display form in dashboard
         // fetch request the form from server
-        fetch("./AddSupplierForm.php")
+        fetch(file)
         // here we convert the server response into html "response is predefined"
         .then(response => response.text())
         .then(data=>{
@@ -85,8 +95,8 @@ document.addEventListener("DOMContentLoaded",()=>{
             dashboard_content.style.display="none";
 
             // here access form conatiner (this is not actual for container ) its form container in dashboard where we will show actual form dynamically
-            let formcontianer = document.getElementById("dynamicsupplierform");
-            // here we give the form data(actual form) to form variable which contain the dynamically form container
+            let formcontianer = document.getElementById("dynamicDisplayForms");
+            // here we give the form data(actual form) to form variable wgchdgchdhich contain the dynamically form container
             formcontianer.innerHTML=data;
             formcontianer.style.display="flex";
             // this function is for submitting form 
@@ -96,12 +106,13 @@ document.addEventListener("DOMContentLoaded",()=>{
         
     }
 
-
-
+    
     // this function is handle the form data then send it to php file then php file send data to database
     let form_handler = ()=>{
         let form= document.getElementById("form");
         form.addEventListener("submit",(event)=>{
+            // window.confirm : predefined function in JS whenever we sub mit form it will asj for confirmation
+            window.confirm("Are you sure to add new supplier");
             // event.preventDefault(); : this stop the normal form submission (without AJAX) 
             event.preventDefault();
             // FormData() :predefined function that extrats the form data

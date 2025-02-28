@@ -156,7 +156,7 @@
                 </div>
             </section>
             <!-- suppiler form container here we will show form dynamically -->
-            <div id="dynamicsupplierform"></div>
+            <div id="dynamicDisplayForms"></div>
         </main>
 
         <footer class="footer">im footer</footer>
@@ -164,6 +164,7 @@
 
 
     <script src="./Assets/js/side_bar.js"></script>
+    <script src="./Assets/js/supplierFormValidation.js"></script>
     <script src="./Assets/js/admin_dashboard.js"></script>
 </body>
 
