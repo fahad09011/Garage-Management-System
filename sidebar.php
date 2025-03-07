@@ -112,7 +112,7 @@
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Add a New Stock Item</a>
+                        <a href="#" file-link="AddNewStockForm.php" class="load-file" >Add a New Stock Item</a>
                     </li>
 
                     <li>

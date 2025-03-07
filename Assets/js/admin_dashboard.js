@@ -117,7 +117,8 @@ document.addEventListener("DOMContentLoaded",()=>{
             event.preventDefault();
             // FormData() :predefined function that extrats the form data
             let form_data = new FormData(form);
-            fetch("AddSupplier.php", {
+            let action_url= form.getAttribute("action");
+            fetch(action_url, {
                 method: "POST",
                 body: form_data
             })
