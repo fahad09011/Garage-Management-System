@@ -20,7 +20,7 @@
                     Booking Menu</a>
                 <ul class="submenu">
                     <li>
-                        <a href="#" file-link="" class="load-file" >Make a Booking</a>
+                        <a href="#" file-link="AddNewBookingForm.php" class="load-file" >Make a Booking</a>
                     </li>
                     <li>
                         <a href="#" file-link="" class="load-file" >Cancel a Booking</a>

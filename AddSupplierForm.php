@@ -51,6 +51,7 @@
         </div>
     </main>
     <script src="./Assets/js/supplierFormValidation.js"></script>
+
 </body>
 
 </html>
