@@ -1,26 +1,4 @@
 
-// document.addEventListener("DOMContentLoaded", ()=>{
-// let main_menus = document.querySelectorAll(".main_menu");
-
-// main_menus.forEach(menu=>{
-//     menu.addEventListener("click", (e)=>{
-//         e.preventDefault();
-//         let sub_menu = this.nextElementSibling;
-
-//         let isopen= sub_menu.classList.contains("show");
-
-//         let close_sub_menu = document.querySelectorAll(".submenu");
-//         close_sub_menu.forEach(sub=>{
-//             sub.classList.remove("show")
-//         });
-//         if(isopen){
-//             sub_menu.classList.add("show");
-//         }
-//     });
-// })
-
-
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
     // ✅ Select all main menu items
