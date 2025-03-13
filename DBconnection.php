@@ -1,7 +1,7 @@
 <?php
 $hostName = "localhost";
 $userName="garageuser";
-$password="garageUserPass";
+$password="garageUserPass4";
 $dbName="garage_system";
 try {
     // PDO > PHP data object
