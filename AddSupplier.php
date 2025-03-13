@@ -1,4 +1,4 @@
-   <?php
+<?php
 include './DBconnection.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];

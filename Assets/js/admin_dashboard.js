@@ -70,6 +70,73 @@ function_to_create_chart(
   "delivery"
 );
 
+
+
+
+
+
+
+//function for automatically load the drop list
+function load_all_drop_downs() {
+  // get all the dropdown from the form
+  let all_drop_downs = document.querySelectorAll(".drop_down_list");
+  all_drop_downs.forEach((drop_down) => {
+    let file_link = drop_down.getAttribute("data_file_link");
+
+    let id = drop_down.getAttribute("data_value");
+
+    let text = drop_down.getAttribute("data_text");
+
+    if (!file_link || !drop_down.id || !id || !text) {
+      alert("This Button is not active yet for:", drop_down.id);
+      return;
+    }
+
+    Display_drop_down(file_link, drop_down.id, id, text);
+  });
+}
+
+// this function is for display the drop down list  inside the form for selecting the details and then insert into database while submitting form
+
+let Display_drop_down = (link, drop_down_table, id, text) => {
+  console.log("fetching data from database (fetch.php).", link);
+  fetch(link)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("check fetch.php file: json respnse is not ok:");
+        // Debugging
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Data received:", data); // Debugging
+
+      let drop_down = document.getElementById(drop_down_table);
+      if (!drop_down) {
+        console.error("Drop down element not foun(form_ajax.js).");
+      }
+      drop_down.innerHTML = "<option value=''>---Select---</option>"; // Clear existing options
+
+      data.forEach((item) => {
+        let option = document.createElement("option");
+        option.value = item[id];
+        option.textContent = item[text];
+        drop_down.appendChild(option);
+      });
+    })
+    .catch((error) => console.error("Error during submitting form", error));
+};
+
+
+
+
+
+
+
+
+
+
+
 // from here the javaScript (AJAX start) for dynamically  display all forms in dashboard ||| And also for send data to database through AJAX
 document.addEventListener("DOMContentLoaded", () => {
   //
@@ -90,8 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-
-
 
   // this function is for display the form and hide the dahsboard content which is initialy display in dashboard
   let display_supplier_form = (file) => {
@@ -118,8 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((error) => console.log("Error during loading form", error));
   };
 
-	
-	
   // this function is handle the form data then send it to php file then php file send data to database
   let form_handler = () => {
     let form = document.getElementById("form");
@@ -147,59 +210,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 });
-
-
-//function for automatically load the drop list
-      function load_all_drop_downs(){
-      // get all the dropdown from the form
-        let all_drop_downs = document.querySelectorAll(".drop_down_list");
-        all_drop_downs.forEach(drop_down=>{
-          let file_link = drop_down.getAttribute("data_file_link");
-          
-          let id = drop_down.getAttribute("data_value");
-
-          let text = drop_down.getAttribute("data_text");
-
-            if (!file_link || !drop_down.id || !id || !text) {
-              alert("This Button is not active yet for:",drop_down.id);
-             return;
-             }
-
-          Display_drop_down(file_link, drop_down.id , id, text );
-        });
-      }
-    
-// this function is for display the drop down list  inside the form for selecting the details and then insert into database while submitting form
-
-    let Display_drop_down = (link, drop_down_table, id, text) => {
-      console.log("fetching data from database (fetch.php).",link)
-      fetch(link)
-        .then((response) => {
-          if (!response.ok) {
-              throw new Error("check fetch.php file: json respnse is not ok:");
-               // Debugging
-          }
-          return response.json();
-        }
-        )
-        .then((data) => {
-          console.log("Data received:", data); // Debugging
-  
-          let drop_down = document.getElementById(drop_down_table);
-          if (!drop_down) {
-            console.error("Drop down element not foun(form_ajax.js).")
-          }
-          drop_down.innerHTML = "<option value=''>---Select---</option>"; // Clear existing options
-  
-          data.forEach((item) => {
-            let option = document.createElement("option");
-            option.value = item[id];
-            option.textContent = item[text];
-            drop_down.appendChild(option);
-          });
-        })
-        .catch((error) => console.error("Error during submitting form", error));
-  
-        
-    };
-  

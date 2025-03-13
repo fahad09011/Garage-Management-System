@@ -1,21 +1,3 @@
-<!--  before add supplier ask for confirmatio  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
