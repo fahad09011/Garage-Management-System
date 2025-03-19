@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +15,7 @@
 
 <body>
     <!-- main container with display grip to handle the layout of page -->
-    <div class="main_container">
+    <main class="main_container">
         <?php include 'header.php';
         ?>
         <?php include 'sidebar.php';
@@ -101,47 +100,207 @@
                     </div>
                 </div>
 
-                <div class="dashboard_recent_booking_container">
-                    <div class="heading_container">
-                        <h2 class="heading">Recent booking</h2>
-                    </div>
-                    <div class="dashboard_booking_table_container">
-                        <table class="table">
-                            <tr class="table-tit">
-                                <th>No</th>
-                                <th>BOoking</th>
-                                <th>Customers</th>
-                                <th>Status</th>
-                                <th>Price</th>
-                                <th>Mechanic ID </th>
-                            </tr>
 
-                            <tr>
-                                <td>01</td>
-                                <td>23-10-1990 <p class="booking_id">
-                                        #045
-                                    </p>
-                                </td>
-                                <td>Mushi <p class="cust_id">#01</p>
-                                </td>
-                                <td>23</td>
-                                <td>Pending</td>
-                                <td>91.98</td>
-                            </tr>
+                <main class="recent_booking_main_conatiner">
+                    <!--  yaha se
+                ise change krna hai bad me booking recent booking show krwani hai idher , ye supplier list wese hi lgai hai iski jga idher sort by list ae gi  -->
+          
+                    <!-- yaha tk -->
 
 
+                    <section class="recent_booking_section_container">
+
+                        <div class="heading_container">
+                            <h2 class="heading">Recent Booking</h2>
+                        </div>
+
+                        <div class="booking_table_container">
+                            <table class="table">
+                                <tr class="table-column">
+                                    <th>No</th>
+                                    <th>BOoking</th>
+                                    <th>Customers</th>
+                                    <th>Status</th>
+                                    <th>Price</th>
+                                    <th>Mechanic ID </th>
+                                </tr>
+
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
 
 
-                        </table>
 
-                    </div>
-                </div>
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+                                <tr>
+
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>01</td>
+                                    <td>23-10-1990 <p class="booking_id">
+                                            #045
+                                        </p>
+                                    </td>
+                                    <td>Mushi <p class="cust_id">#01</p>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Pending</td>
+                                    <td>91.98</td>
+                                </tr>
+
+
+
+
+                            </table>
+
+                        </div>
+                    </section>
+                </main>
             </section>
             <!-- suppiler form container here we will show form dynamically -->
             <div id="dynamicDisplayForms"></div>
         </main>
 
-    </div>
+    </main>
     <script src="./Assets/js/side_bar.js"></script>
     <script src="./Assets/js/admin_dashboard.js"></script>
 

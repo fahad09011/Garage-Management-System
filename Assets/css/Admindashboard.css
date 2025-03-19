@@ -80,7 +80,7 @@ input::placeholder{
     
 }
 /* dashboard section */
-.dashboard_content_Section{
+.dashboard_content_Section,.delete_supplier_main_conatainer{
     padding: 20px;
 }
 .top_dashboard{
@@ -126,19 +126,20 @@ p{
 p span{
     color: var(--second_color);
 }
-/* recent booking table */
-.dashboard_recent_booking_container{
+/* recent booking table
+delete supplier page */
+.recent_booking_section_container,.suppliers_list_section_container{
     background-color: var(--fourth_color);
 border-radius: 10px;
 }
-.dashboard_booking_table_container{
+.booking_table_container,.supplier_table_conatainer{
     border: 2px solid red;
     width: 100%;
     height: 300px;
     overflow: auto;
     background-color: var(--fourth_color);
 }
-.heading{
+.heading,.heading_container_supplier_list{
     color: var(--font_sub_color);
     padding: 20px 0;
 }
@@ -151,18 +152,40 @@ th, td {
     padding: 10px;
 }
 
-.table-tit{
+.table-column{
     border:2px solid black;
 }
 td{
       border-bottom:2px solid rgba(0, 0, 0, 0.064);
     text-align: center;
   }
-  .dashboard_recent_booking_container{
+  .dashboard_recent_booking_container,.supplier_list_container{
     padding: 10px;
     width: 100%;
     height: 100%;
   }
+
+
+/* Delete supplier page >supplier drop down */
+.delete_supplierheader ul{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* footer */
   .footer{
     grid-area: footer;

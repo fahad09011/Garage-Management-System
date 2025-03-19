@@ -104,7 +104,7 @@
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Delete a Supplier</a>
+                        <a href="#" file-link="deleteSupplierpage.php" class="load-file" >Delete a Supplier</a>
                     </li>
 
                     <li>

@@ -9,7 +9,8 @@
             <!-- centre header -->
             <div class="center_header">
                 <input type="search" placeholder="Search" />
-                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                
+                <!-- <i class="fa-solid fa-magnifying-glass"></i>  -->
             </div>
             <!-- right header -->
             <div class="right_header">

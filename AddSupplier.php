@@ -10,7 +10,6 @@ try {
     $insert = $con->prepare("INSERT INTO `Supplier`(`Name`, `Address`, `Telephone`, `Email`) 
     VALUES (:name, :address, :telephone, :email )");
 
-// idher alphabet ka case change kia shoro walw sb alphabetics ka
     $insert->bindParam(':name', $name);
     $insert->bindParam(':address', $address);
     $insert->bindParam(':telephone', $telephone);

@@ -1,12 +1,56 @@
-<?php
+<?php 
 include 'DBconnection.php';
+
+$response = [
+    'customer' => [],
+    'supplier'  => [],
+    'job_type'  => []
+];
+
+
+
+
+// drop down for ustomer
 try {
-    $select = $con->prepare("SELECT `Customer_ID`, `Name` FROM `Customer` WHERE `Delete_Flag` = '0'");
-    $select->execute();
-    $customer = $select->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($customer); // Return JSON array
+    $Customer = $con->prepare("SELECT `Customer_ID`, `Name` FROM `Customer` WHERE `Delete_Flag` = '0'");
+    $Customer->execute();
+    $response['customer'] = $Customer->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    error_log("Database error: " . $e->getMessage());
+    
+    error_log("Database Error while fetching dropdown".$e->getMessage());
     echo json_encode([]); // Return empty array on error
 }
+
+
+//Drop Down For Supplier 
+try {
+    $Supplier = $con->prepare("SELECT `Supplier_ID`, `Name` FROM `Supplier` WHERE `Delete_Flag` = '0' ;");
+    $Supplier->execute();
+    $response['supplier'] = $Supplier->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    
+    error_log("Database Error while fetching dropdown".$e->getMessage());
+    echo json_encode([]); // Return empty array on error
+}
+
+
+// drop down for job type
+try {
+    $jobtype = $con->prepare("SELECT `Job_Type_ID`, `Job_Type_Name` FROM `Job_Type` WHERE `Delete_Flag` = '0' ;");
+    $jobtype->execute();
+    $response['job_type'] = $jobtype->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    error_log("Database Error while fetching dropdown".$e->getMessage());
+    echo json_encode([]);
+}
+
+
+
+// Set the content type to JSON
+header('Content-Type: application/json');
+
+echo json_encode($response);
+
+
 ?>
+

@@ -103,7 +103,8 @@ let Display_drop_down = (link, drop_down_table, id, text) => {
   fetch(link)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("check fetch.php file: json respnse is not ok:");
+        throw new Error(`HTTP error! Status: ${response.status}, Message: ${response.statusText}`);
+
         // Debugging
       }
       return response.json();
@@ -117,7 +118,20 @@ let Display_drop_down = (link, drop_down_table, id, text) => {
       }
       drop_down.innerHTML = "<option value=''>---Select---</option>"; // Clear existing options
 
-      data.forEach((item) => {
+
+      let items = [];
+
+      if (drop_down_table ==="Customer") {
+        items=data.customer;
+
+      } else if (drop_down_table === "Supplier"){
+        items = data.supplier;
+      } 
+      else if (drop_down_table === "Job_Type"){
+        items = data.job_type;
+      }
+
+      items.forEach((item) => {
         let option = document.createElement("option");
         option.value = item[id];
         option.textContent = item[text];
@@ -154,6 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         event.preventDefault();
         display_supplier_form(file_links);
+        // store the last opened page in local storage to oreveent from go back to dashboar page even afater reload the page
+        sessionStorage.setItem("lastOpenedForm",file_links);
       }
     }
   });
@@ -177,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
         formcontianer.style.display = "flex";
         // this function is for submitting form
         load_all_drop_downs();
-
         form_handler();
       })
       .catch((error) => console.log("Error during loading form", error));
@@ -209,4 +224,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch((error) => console.log("Error during submitting form", error));
     });
   };
+
+  let lastOpenedForm = sessionStorage.getItem("lastOpenedForm");
+  if (lastOpenedForm) {
+    display_supplier_form(lastOpenedForm)
+  }
 });
