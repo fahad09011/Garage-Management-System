@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Job Type | GMS</title>
+</head>
+<body>
+    <main class="main_form_container">
+        <div class="form_wrapper">
+            <div class="form_title">
+                <h1>Add Job Type</h1>
+            </div>
+            <form action="addJobType.php" method="post" id="form" class="form">
+                <p>
+                    <label for="Lead_Mechanic_ID">Lead Mechanic:</label>
+                    <select name="Lead_Mechanic_ID" id="Lead_Mechanic_ID" required>
+                        <option value="" disabled selected>Select Lead Mechanic</option>
+                        <?php
+                            include 'DBconnection.php';
+                            try {
+                                $sql = "SELECT `Mechanic ID`, `Mechanic Name` FROM Mechanics";
+                                $stmt = $con->prepare($sql);
+                                $stmt->execute();
+
+                                $mechanics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                if ($mechanics) {
+                                    foreach ($mechanics as $row) {
+                                        echo '<option value="' . htmlspecialchars($row['Mechanic ID']) . '">' . htmlspecialchars($row['Mechanic Name']) . '</option>';
+                                    }
+                                } else {
+                                    echo "<option value=''>No mechanics available</option>";
+                                }
+                            } catch (PDOException $e) {
+                                echo "<option value=''>Database connection error: " . htmlspecialchars($e->getMessage()) . "</option>";
+                            }
+                        ?>
+                    </select>
+                </p>
+                <div class="inputMain">
+                    <p>
+                        <label for="Job_Type_Name">Job Type Name:</label>
+                        <input type="text" name="Job_Type_Name" id="Job_Type_Name" required/>
+                    </p>
+                </div>
+                <div class="inputMain">
+                    <p>
+                        <label for="Description">Description:</label>
+                        <input type="text" name="Description" id="Description" required/>
+                    </p>
+                </div>
+                <div class="inputMain">
+                    <p>
+                        <label for="Price">Base Price:</label>
+                        <input type="text" name="Price" id="Price" required pattern="\d+(\.\d{2})?" title="Please enter a valid price (e.g., 100 or 100.00)"/>
+                    </p>
+                </div>
+                <div class="form_button">
+                    <input type="reset" value="Cancel" class="formButton">
+                    <input type="submit" value="Add Job Type" class="formButton">
+                </div>
+                <p id="message"></p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
