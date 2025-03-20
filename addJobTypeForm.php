@@ -1,3 +1,8 @@
+<?php
+// Include the database connection
+include 'DBconnection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,23 +22,28 @@
                     <select name="Lead_Mechanic_ID" id="Lead_Mechanic_ID" required>
                         <option value="" disabled selected>Select Lead Mechanic</option>
                         <?php
-                            include 'DBconnection.php';
-                            try {
-                                $sql = "SELECT `Mechanic ID`, `Mechanic Name` FROM Mechanics";
-                                $stmt = $con->prepare($sql);
-                                $stmt->execute();
+                        // Fetch mechanics from the database
+                        try {
+                            // Corrected query
+                            $sql = "SELECT `Mechanic_ID`, `Mechanic_Name` FROM Mechanics WHERE `Deleted_Flag` = 0";
+                            $stmt = $con->prepare($sql);
+                            $stmt->execute();
 
-                                $mechanics = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                if ($mechanics) {
-                                    foreach ($mechanics as $row) {
-                                        echo '<option value="' . htmlspecialchars($row['Mechanic ID']) . '">' . htmlspecialchars($row['Mechanic Name']) . '</option>';
-                                    }
-                                } else {
-                                    echo "<option value=''>No mechanics available</option>";
+                            // Fetch all mechanics
+                            $mechanics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            
+                            if ($mechanics) {
+                                // Output each mechanic as an option in the select dropdown
+                                foreach ($mechanics as $row) {
+                                    echo '<option value="' . htmlspecialchars($row['Mechanic_ID']) . '">' . htmlspecialchars($row['Mechanic_Name']) . '</option>';
                                 }
-                            } catch (PDOException $e) {
-                                echo "<option value=''>Database connection error: " . htmlspecialchars($e->getMessage()) . "</option>";
+                            } else {
+                                echo "<option value=''>No active mechanics available</option>";
                             }
+                        } catch (PDOException $e) {
+                            // Handle error and display message if the query fails
+                            echo "<option value=''>Error fetching mechanics: " . htmlspecialchars($e->getMessage()) . "</option>";
+                        }
                         ?>
                     </select>
                 </p>
