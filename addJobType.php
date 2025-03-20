@@ -1,45 +1,44 @@
 <?php
-include './DBconnection.php';
+include 'DBconnection.php';
 
+// Initialize variables for job type details
+$jobTypeName = '';
+$description = '';
+$price = '';
+$leadMechanic = '';  // Changed variable name
+
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $jobTypeName = trim($_POST['Job_Type_Name']);
-    $description = trim($_POST['Description']);
-    $price = trim($_POST['Price']);
-    $leadMechanicID = $_POST['Lead_Mechanic_ID'];
+    // Capture form data
+    $jobTypeName = $_POST['Job_Type_Name'];
+    $description = $_POST['Description'];
+    $price = $_POST['Price'];
+    $leadMechanic = $_POST['Lead_Mechanic_ID'];  // We will insert the mechanic's name, not ID
 
-    try {
-        // Generate a new unique Job_Type_ID if it's not auto-increment
-        $newJobTypeID = null;
-        $stmt = $con->query("SELECT MAX(`Job_Type_ID`) AS maxID FROM `Job Type`");
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($row && $row['maxID']) {
-            $newJobTypeID = $row['maxID'] + 1;
-        } else {
-            $newJobTypeID = 1;
+    // Check if lead mechanic is selected
+    if (empty($leadMechanic)) {
+        echo "<h2>Error: You must select a Lead Mechanic.</h2>";
+    } else {
+        try {
+            // Insert the new job type into the database (with mechanic name instead of ID)
+            $insert = $con->prepare("INSERT INTO `Job_Type` (`Job_Type_Name`, `Description`, `Price`, `Lead_Mechanic`) 
+                                     VALUES (:Job_Type_Name, :Description, :Price, :Lead_Mechanic)");
+
+            // Bind parameters
+            $insert->bindParam(':Job_Type_Name', $jobTypeName, PDO::PARAM_STR);
+            $insert->bindParam(':Description', $description, PDO::PARAM_STR);
+            $insert->bindParam(':Price', $price, PDO::PARAM_INT);  // Ensure price is an integer
+            $insert->bindParam(':Lead_Mechanic', $leadMechanic, PDO::PARAM_STR);  // Bind mechanic's name
+
+            // Execute the query
+            if ($insert->execute()) {
+                echo "<h2>Job Type added successfully!</h2>";
+            } else {
+                echo "<h2>Error occurred while adding the Job Type.</h2>";
+            }
+        } catch (PDOException $e) {
+            echo "<h2>Database error: " . htmlspecialchars($e->getMessage()) . "</h2>";
         }
-
-        // Prepare SQL statement
-        $insert = $con->prepare("INSERT INTO `Job Type` (`Job_Type_ID`, `Job_Type_Name`, `Description`, `Price`, `Lead_Mechanic_ID`)
-            VALUES (:Job_Type_ID, :Job_Type_Name, :Description, :Price, :Lead_Mechanic_ID)");
-
-        // Bind parameters
-        $insert->bindParam(':Job_Type_ID', $newJobTypeID, PDO::PARAM_INT);
-        $insert->bindParam(':Job_Type_Name', $jobTypeName, PDO::PARAM_STR);
-        $insert->bindParam(':Description', $description, PDO::PARAM_STR);
-        $insert->bindParam(':Price', $price, PDO::PARAM_STR);
-        $insert->bindParam(':Lead_Mechanic_ID', $leadMechanicID, PDO::PARAM_INT);
-
-        // Execute the query
-        if ($insert->execute()) {
-            echo "<h2>Job Type added successfully.</h2>";
-            echo "<p>Unique Job Type ID: <strong>" . htmlspecialchars($newJobTypeID) . "</strong></p>";
-        } else {
-            echo "<h2>Error: Could not insert the record.</h2>";
-            error_log("Database Error: " . print_r($insert->errorInfo(), true));
-        }
-    } catch (PDOException $e) {
-        echo "<h2>Database error occurred.</h2>";
-        error_log("Database error: " . $e->getMessage());
     }
 }
 ?>
