@@ -145,8 +145,9 @@ border-radius: 10px;
 }
 .table{
     width: 100%;
-    overflow:auto;
+    /* overflow:auto; */
     border-collapse: collapse;
+    position: sticky;
 }
 th, td {
     padding: 10px;
@@ -154,6 +155,7 @@ th, td {
 
 .table-column{
     border:2px solid black;
+    /* position: static; */
 }
 td{
       border-bottom:2px solid rgba(0, 0, 0, 0.064);

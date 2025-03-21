@@ -26,7 +26,7 @@
                 <!-- DropDown For customer -->
                 <div class="inputMain">
                     <label for="Customer">Customer:</label>
-                    <select class="drop_down_list customer_select_in_booking" name="customer_id" id="Customer" data_file_link="fetch.php" data_value="Customer_ID" data_text="Name">
+                    <select class="drop_down_list customer_select_in_booking" name="customer_id" id="Customer" data_file_link="fetch.php" data_value="Customer_ID" data_text="Name" >
                         <option value="">---Select Customer---</option>
                     </select>
                 </div>
@@ -34,7 +34,7 @@
                 <!-- DropDown For job type -->
                 <div class="inputMain">
                     <label for="Job_Type">Job Type:</label>
-                    <select class="drop_down_list job_type_select_in_booking" name="job_type_id" id="Job_Type" data_file_link="fetch.php" data_value="Job_Type_ID" data_text="Job_Type_Name">
+                    <select class="drop_down_list job_type_select_in_booking" name="job_type_id[]" id="Job_Type" data_file_link="fetch.php" data_value="Job_Type_ID" data_text="Job_Type_Name" multiple>
                         <option value="">---Select Job Type---</option>
                     </select>
                 </div>

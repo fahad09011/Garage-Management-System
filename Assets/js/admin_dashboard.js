@@ -202,11 +202,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let form_handler = () => {
     let form = document.getElementById("form");
     form.addEventListener("submit", (event) => {
+
+
+      
+        // event.preventDefault(); : this stop the normal form submission (without AJAX)
+        event.preventDefault();
       // window.confirm : predefined function in JS whenever we sub mit form it will asj for confirmation
-      window.confirm("Are you sure to add new supplier");
-      // event.preventDefault(); : this stop the normal form submission (without AJAX)
-      event.preventDefault();
+      let is_confirm = window.confirm("Are you sure to make changes ?");
+      if (!is_confirm) {
       // FormData() :predefined function that extrats the form data
+      return false;
+      }
       let form_data = new FormData(form);
       let action_url = form.getAttribute("action");
       fetch(action_url, {

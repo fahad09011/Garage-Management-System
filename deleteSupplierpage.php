@@ -81,11 +81,13 @@ include './deleteSupplier.php';
                         <th>Website Address</th>
                     </tr>
                     <?php
+                    if (!empty($row)) {
+                        
                     foreach ($row  as $rs) {
 
 
                         echo "
-                           <tr>
+                           <tr class='table_row'>
                                <td>  {$rs['Supplier_ID']}  </td>
                                <td>  {$rs['Name']}         </td>
                                <td>  {$rs['Address']}      </td>
@@ -93,6 +95,15 @@ include './deleteSupplier.php';
                                <td>  {$rs['Email']}        </td>
                           </tr> ";
                     }
+                    } else {
+                        
+                        echo"
+                        <tr>
+                        <td><h2>No Records Available Yet ComeBack later!</h2></td>
+                        </tr> 
+                             ";
+                    }
+                    
                     ?>
                 </table>
             </div>

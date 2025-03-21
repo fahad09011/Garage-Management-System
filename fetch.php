@@ -35,14 +35,14 @@ try {
 
 
 // drop down for job type
-try {
-    $jobtype = $con->prepare("SELECT `Job_Type_ID`, `Job_Type_Name` FROM `Job_Type` WHERE `Delete_Flag` = '0' ;");
-    $jobtype->execute();
-    $response['job_type'] = $jobtype->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    error_log("Database Error while fetching dropdown".$e->getMessage());
-    echo json_encode([]);
-}
+ try {
+     $jobtype = $con->prepare("SELECT `Job_Type_ID`, `Job_Type_Name` FROM `Job_Type` WHERE `Delete_Flag` = '0' ;");
+     $jobtype->execute();
+     $response['job_type'] = $jobtype->fetchAll(PDO::FETCH_ASSOC);
+ } catch (PDOException $e) {
+     error_log("Database Error while fetching dropdown".$e->getMessage());
+     echo json_encode([]);
+ }
 
 
 

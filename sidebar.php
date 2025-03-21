@@ -72,7 +72,7 @@
                 </a>
                 <ul class="submenu">
                     <li>
-                        <a href="#" file-link="" class="load-file" >New Invoices from Suppliers</a>
+                        <a href="#" file-link="newInvoicesForm.php" class="load-file" >New Invoices from Suppliers</a>
                     </li>
                     <li>
                         <a href="#" file-link="" class="load-file" >Payment to Suppliers</a>
@@ -124,7 +124,7 @@
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Add a New Job Type</a>
+                        <a href="#" file-link="addJobTypeForm.php" class="load-file" >Add a New Job Type</a>
                     </li>
 
                     <li>
