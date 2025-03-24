@@ -10,6 +10,14 @@ include 'DBconnection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Job Type | GMS</title>
 </head>
+    <link rel="stylesheet" href="./Assets/css/ShowSuppliers.css">
+    <style>
+        /* Add this to your CSS file */
+        select.drop_down_list option {
+            color: black !important;
+            font-size: 16px !important;
+        }
+    </style>
 <body>
     <main class="main_form_container">
         <div class="form_wrapper">
