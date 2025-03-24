@@ -6,13 +6,19 @@ ul li{
     /* cursor: pointer; */
     
 }
-
+body{
+    height: 100%;
+    /* width: 500px; */
+    /* border: 2px solid red; */
+}
 .dashboard_sidebar{
     grid-area: sidebar;
     background-color:var(--fourth_color);
     display: flex;
     flex-direction: column;
     gap: 60px; 
+    height: 100%;
+    /* border: 2px solid red; */
 }
 .logo_name_Container{
     display: flex;
@@ -48,7 +54,9 @@ ul li{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    border: 2px solid red;
+    padding: 10px;
    
 }
 

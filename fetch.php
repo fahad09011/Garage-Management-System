@@ -12,7 +12,7 @@ $response = [
 
 // drop down for ustomer
 try {
-    $Customer = $con->prepare("SELECT `Customer_ID`, `Name` FROM `Customer` WHERE `Delete_Flag` = '0'");
+    $Customer = $con->prepare("SELECT `Customer_ID`, `Name` FROM `Customer` WHERE `Delete_Flag` = '0';");
     $Customer->execute();
     $response['customer'] = $Customer->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {

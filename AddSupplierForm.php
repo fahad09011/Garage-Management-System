@@ -40,6 +40,13 @@
             <label for="supplier_address">Supplier's Address: </label>
             <input type="text" id="supplier_address" placeholder="Enter supplier's address" name="address">
             </div>
+
+<!-- Website URL -->
+<div class="inputMain">
+                    <label for="web_url">Website URL: </label>
+                    <input type="url" id="web_url" placeholder="Enter website URL, https://example.com" name="web_url" >
+                </div>
+
             <!-- Form Buttons -->
             <div class="form_buttons">
                 <input type="reset" value="Cancel" class="formButton">
@@ -51,7 +58,7 @@
         </div>
     </main>
     <script src="./Assets/js/supplierFormValidation.js"></script>
-
+<script src="./Assets/js/supplierFormValidation.js"></script>
 </body>
 
 </html>

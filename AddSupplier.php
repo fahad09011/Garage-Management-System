@@ -5,15 +5,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $telephone = $_POST['telephone'];
     $address = $_POST['address'];
+    $web_url = $_POST['web_url'];
 try {
     
-    $insert = $con->prepare("INSERT INTO `Supplier`(`Name`, `Address`, `Telephone`, `Email`) 
-    VALUES (:name, :address, :telephone, :email )");
+    $insert = $con->prepare("INSERT INTO `Supplier`(`Name`, `Address`, `Telephone`, `Email`, `web_url`) 
+    VALUES (:name, :address, :telephone, :email, :web_url )");
 
     $insert->bindParam(':name', $name);
     $insert->bindParam(':address', $address);
     $insert->bindParam(':telephone', $telephone);
     $insert->bindParam(':email', $email);
+    $insert->bindParam(':web_url', $web_url);
 
 
     if($insert->execute())

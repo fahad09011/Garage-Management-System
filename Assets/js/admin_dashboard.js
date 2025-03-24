@@ -70,12 +70,60 @@ function_to_create_chart(
   "delivery"
 );
 
+//  this function with AJAX is for fetch th eselected supplier data from data absee and display them in form
+let fetch_Supplier_function = ()=>{
 
 
+  let selected_supplier = document.querySelector("[data-amend-supplier-dropdown='Supplier']");
+    // Add null check =================
+    if (!selected_supplier) {
+      console.log("No supplier dropdown found in this form");
+      return;
 
+    }
+    // =================================
+  selected_supplier.addEventListener("change", (s) => {
+    let supplierID = s.target.value;
+    console.log("supplier ID is: ",supplierID)
+  
+    if (supplierID) {
+      // fetch dat afrom database and display them in form
+      fetch(`fetchsupplier.php`,{
+        method:'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
 
+                body: `supplier_id=${supplierID}`
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `HTTP error! Status: ${response.status}, Message: ${response.status}`
+            );
+            // Debugging
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (!data) {
+            console.log("data not found",data)
+            
+          }
+          console.log("Data received:", data); // Debugging
 
-
+         document.getElementById("id").value=data.Supplier_ID;
+          document.getElementById("supplier_name").value=data.Name;
+          document.getElementById("supplier_email").value=data.Email;
+          document.getElementById("supplier_telephone").value=data.Telephone;
+          document.getElementById("supplier_address").value=data.Address;
+          document.getElementById("web_url").value=data.web_url;
+          
+        })
+        .catch((error) => console.error("Error during submitting form for fetching supplier details from dropdown", error))
+    }
+  });
+};
 //function for automatically load the drop list
 function load_all_drop_downs() {
   // get all the dropdown from the form
@@ -103,7 +151,9 @@ let Display_drop_down = (link, drop_down_table, id, text) => {
   fetch(link)
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}, Message: ${response.statusText}`);
+        throw new Error(
+          `HTTP error! Status: ${response.status}, Message: ${response.statusText}`
+        );
 
         // Debugging
       }
@@ -118,16 +168,13 @@ let Display_drop_down = (link, drop_down_table, id, text) => {
       }
       drop_down.innerHTML = "<option value=''>---Select---</option>"; // Clear existing options
 
-
       let items = [];
 
-      if (drop_down_table ==="Customer") {
-        items=data.customer;
-
-      } else if (drop_down_table === "Supplier"){
+      if (drop_down_table === "Customer") {
+        items = data.customer;
+      } else if (drop_down_table === "Supplier") {
         items = data.supplier;
-      } 
-      else if (drop_down_table === "Job_Type"){
+      } else if (drop_down_table === "Job_Type") {
         items = data.job_type;
       }
 
@@ -141,18 +188,11 @@ let Display_drop_down = (link, drop_down_table, id, text) => {
     .catch((error) => console.error("Error during submitting form", error));
 };
 
-
-
-
-
-
-
-
-
-
-
 // from here the javaScript (AJAX start) for dynamically  display all forms in dashboard ||| And also for send data to database through AJAX
 document.addEventListener("DOMContentLoaded", () => {
+
+
+
   //
   // {====== ponit to be notes=====} > now we dont need to create multiple AJAX beacuse we make it re-usable
   // here "event is the perameter of function"
@@ -169,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
         display_supplier_form(file_links);
         // store the last opened page in local storage to oreveent from go back to dashboar page even afater reload the page
-        sessionStorage.setItem("lastOpenedForm",file_links);
+        sessionStorage.setItem("lastOpenedForm", file_links);
       }
     }
   });
@@ -190,28 +230,51 @@ document.addEventListener("DOMContentLoaded", () => {
         let formcontianer = document.getElementById("dynamicDisplayForms");
         // here we give the form data(actual form) to form variable wgchdgchdhich contain the dynamically form container
         formcontianer.innerHTML = data;
-        formcontianer.style.display = "flex";
+        formcontianer.style.display ="flex";
+       
         // this function is for submitting form
         load_all_drop_downs();
         form_handler();
+        fetch_Supplier_function();
       })
       .catch((error) => console.log("Error during loading form", error));
   };
-
   // this function is handle the form data then send it to php file then php file send data to database
   let form_handler = () => {
     let form = document.getElementById("form");
+    if (!form) return;
+
+    // Check if phone field exists in THIS form
+    const phoneInput = form.querySelector('[name="phone"], #supplier_telephone');
+    
+    // Setup real-time validation ONLY if phone field exists
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function() {
+            const isValid = /^[0-9]{10,20}$/.test(this.value.trim());
+            this.setCustomValidity(isValid ? "" : "Phone: 10-20 digits required");
+            this.reportValidity();
+        });
+    }
+
     form.addEventListener("submit", (event) => {
-
-
+      // event.preventDefault(); : this stop the normal form submission (without AJAX)
       
-        // event.preventDefault(); : this stop the normal form submission (without AJAX)
-        event.preventDefault();
+      event.preventDefault();
+      // validate form
+      if (phoneInput) {
+        const phoneValid = /^[0-9]{10,20}$/.test(phoneInput.value.trim());
+        if (!phoneValid) {
+            phoneInput.setCustomValidity("Invalid phone number");
+            phoneInput.reportValidity();
+            console.log("Phone validation failed");
+            return false;
+        }
+    }
       // window.confirm : predefined function in JS whenever we sub mit form it will asj for confirmation
       let is_confirm = window.confirm("Are you sure to make changes ?");
       if (!is_confirm) {
-      // FormData() :predefined function that extrats the form data
-      return false;
+        // FormData() :predefined function that extrats the form data
+        return false;
       }
       let form_data = new FormData(form);
       let action_url = form.getAttribute("action");
@@ -233,6 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastOpenedForm = sessionStorage.getItem("lastOpenedForm");
   if (lastOpenedForm) {
-    display_supplier_form(lastOpenedForm)
+    display_supplier_form(lastOpenedForm);
   }
 });

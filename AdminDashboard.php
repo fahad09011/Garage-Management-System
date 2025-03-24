@@ -104,7 +104,7 @@
                 <main class="recent_booking_main_conatiner">
                     <!--  yaha se
                 ise change krna hai bad me booking recent booking show krwani hai idher , ye supplier list wese hi lgai hai iski jga idher sort by list ae gi  -->
-          
+
                     <!-- yaha tk -->
 
 
@@ -303,6 +303,7 @@
     </main>
     <script src="./Assets/js/side_bar.js"></script>
     <script src="./Assets/js/admin_dashboard.js"></script>
+    <script src="./Assets/js/supplierFormValidation.js"></script>
 
 
 </body>
