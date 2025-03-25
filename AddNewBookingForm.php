@@ -64,7 +64,7 @@
                     <!-- Mileage -->
                     <div class="inputMain">
                         <label for="mile_age">Current Mileage: </label>
-                        <input type="text" id="mile_age" placeholder="Enter Vehicle's Mileage" name="mile_age">
+                        <input type="number" id="mile_age" placeholder="Enter Vehicle's Mileage" name="mile_age">
                     </div>
 
                     <!-- Details -->
