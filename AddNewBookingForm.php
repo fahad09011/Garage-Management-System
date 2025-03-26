@@ -1,3 +1,18 @@
+<!-- 
+    File:           AddNewBookingForm.html
+    Purpose:        Form for creating new vehicle service bookings
+    Member:         Muhammad Fahad (C00311349)
+    Functionality:
+                   Customer selection dropdown (dynamic population)
+          	   	   Multiple job type selection
+                   Vehicle information section
+                   Date picker for booking
+                   Form validation
+    Dependencies:
+           		   ShowSuppliers.css for styling
+          		   fetch.php for dynamic dropdown data
+	Date:		   26/03/2025
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +41,7 @@
                 <!-- DropDown For customer -->
                 <div class="inputMain">
                     <label for="Customer">Customer:</label>
-                    <select class="drop_down_list customer_select_in_booking" name="customer_id" id="Customer" data_file_link="fetch.php" data_value="Customer_ID" data_text="Name" >
+                    <select class="drop_down_list customer_select_in_booking" name="customer_id" id="Customer" data_file_link="fetch.php" data_value="Customer_ID" data_text="Name" required>
                         <option value="">---Select Customer---</option>
                     </select>
                 </div>
@@ -34,14 +49,14 @@
                 <!-- DropDown For job type -->
                 <div class="inputMain">
                     <label for="Job_Type">Job Type:</label>
-                    <select class="drop_down_list job_type_select_in_booking" name="job_type_id[]" id="Job_Type" data_file_link="fetch.php" data_value="Job_Type_ID" data_text="Job_Type_Name" multiple>
+                    <select class="drop_down_list job_type_select_in_booking" name="job_type_id[]" id="Job_Type" data_file_link="fetch.php" data_value="Job_Type_ID" data_text="Job_Type_Name" multiple required>
                         <option value="">---Select Job Type---</option>
                     </select>
                 </div>
                 <!-- Booking Date -->
                 <div class="inputMain">
                     <label for="booking_date">Booking Date: </label>
-                    <input type="date" id="booking_date" name="booking_date">
+                    <input type="date" id="booking_date" name="booking_date" required>
                 </div>
 
 
@@ -52,7 +67,7 @@
                     <!-- Model -->
                     <div class="inputMain">
                         <label for="vehicle_model">Vehicle Model:</label>
-                        <input type="text" id="vehicle_model" placeholder="Enter vehicle model" name="vehicle_model" required>
+                        <input type="number" id="vehicle_model" placeholder="Enter vehicle model" name="vehicle_model" required>
                     </div>
 
                     <!-- Registration Number -->
@@ -64,7 +79,7 @@
                     <!-- Mileage -->
                     <div class="inputMain">
                         <label for="mile_age">Current Mileage: </label>
-                        <input type="number" id="mile_age" placeholder="Enter Vehicle's Mileage" name="mile_age">
+                        <input type="number" id="mile_age" placeholder="Enter Vehicle's Mileage" name="mile_age" required>
                     </div>
 
                     <!-- Details -->

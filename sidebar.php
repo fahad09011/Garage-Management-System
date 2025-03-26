@@ -1,10 +1,35 @@
+<!-- 
+    File:           dashboard_sidebar.php
+    Purpose:        Main navigation sidebar for AutoSphere dashboard
+    Features:
+                    > Brand logo/name header
+                    > Collapsible menu system with icons
+                    > 7 main menus  with submenus
+                    > All the Sub-menu are display via JavaScript by targeting their customize attribute calles *file-link*
+                    > Expandable submenus for each category
+    Dependencies:
+                    > Font Awesome for icons
+                    > CSS for styling
+                    > JavaScript for dynamic loading
+    Created By:       Muhammad Fahad (c00311349)
+    Group Members :
+                    c00298483 Adam Dowling
+                    C00295140 Taemour Basharat
+                    C00311349 Muhammad Fahad
+                    C00297032 Emoshoke Saliu
+                    C00290944 Gleb Tutubalin  
+      Date:			26/03/2025
+-->
+
+
 <aside class="dashboard_sidebar">
+        <!-- Branding Section -->
     <div class="logo_name_Container">
         <i class="fa-solid fa-screwdriver-wrench logo"></i>
         <h1 class="name">AutoSphere</h1>
     </div>
 
-    <!-- sidebar navba -->
+    <!-- Main Navigation -->
     <nav class="dashboard_navbar">
         <ul class="main_menu_continer">
 
@@ -36,10 +61,10 @@
 
                 <ul class="submenu">
                     <li>
-                        <a href="#" file-link="" class="load-file" >Commencment/Start of Job</a>
+                        <a href="#" file-link="Commence_Job_Form.php" class="load-file" >Commencment/Start of Job</a>
                     </li>
                     <li>
-                        <a href="#" file-link="" class="load-file" >Completion of Job</a>
+                        <a href="#" file-link="completeJobForm.php" class="load-file" >Completion of Job</a>
                     </li>
                     <li>
                         <a href="#" file-link="" class="load-file" >Payment for Job</a>
@@ -56,7 +81,7 @@
                 </a>
                 <ul class="submenu">
                     <li>
-                        <a href="#" file-link="" class="load-file" >Re-order Stock</a>
+                        <a href="#" file-link="reorderStockForm.php" class="load-file" >Re-order Stock</a>
                     </li>
                     <li>
                         <a href="#" file-link="" class="load-file" >Recive Deliveries</a>
@@ -75,7 +100,7 @@
                         <a href="#" file-link="newInvoicesForm.php" class="load-file" >New Invoices from Suppliers</a>
                     </li>
                     <li>
-                        <a href="#" file-link="" class="load-file" >Payment to Suppliers</a>
+                        <a href="#" file-link="paymentForm.php" class="load-file" >Payment to Suppliers</a>
                     </li>
                 </ul>
             </li>
@@ -88,15 +113,15 @@
                 </a>
                 <ul class="submenu">
                     <li>
-                        <a href="#" file-link="" class="load-file" >Add a New Customer</a>
+                        <a href="#" file-link="add_customer_form.php" class="load-file" >Add a New Customer</a>
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Delete a Customer</a>
+                        <a href="#" file-link="delete_customer_form.php" class="load-file" >Delete a Customer</a>
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Amend / View a Customer</a>
+                        <a href="#" file-link="amend_customer_form.php" class="load-file" >Amend / View a Customer</a>
                     </li>
 
                     <li>
@@ -116,11 +141,11 @@
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Delete a Stock Item</a>
+                        <a href="#" file-link="DeleteStockPage.php" class="load-file" >Delete a Stock Item</a>
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Amend / View a Stock Item</a>
+                        <a href="#" file-link="AmendViewStockPage.php" class="load-file" >Amend / View a Stock Item</a>
                     </li>
 
                     <li>
@@ -128,11 +153,11 @@
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Delete a Job Type</a>
+                        <a href="#" file-link="DeleteJobTypePage.php" class="load-file" >Delete a Job Type</a>
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Amend / View a Job Type</a>
+                        <a href="#" file-link="AmendJobTypeForm.php" class="load-file" >Amend / View a Job Type</a>
                     </li>
                 </ul>
             </li>
@@ -153,7 +178,7 @@
                     </li>
 
                     <li>
-                        <a href="#" file-link="" class="load-file" >Unpaid Invoices Report</a>
+                        <a href="#" file-link="unpaidInvoicesReport.php" class="load-file" >Unpaid Invoices Report</a>
                     </li>
                 </ul>
             </li>

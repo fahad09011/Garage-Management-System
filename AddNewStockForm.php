@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Stock Item|GMS</title>
-    <link rel="stylesheet" href="./Assets/css/NewStock.css">
+    <link rel="stylesheet" href="./Assets/css/ShowSuppliers.css">
 </head>
 
 <body>

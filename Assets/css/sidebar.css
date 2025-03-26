@@ -1,15 +1,15 @@
+/* File name :     Admin Dashboard CSS
+Description :   This File contain the styling of for side bar.
+
+Group Members :
+c00298483 Adam Dowling
+C00295140 Taemour Basharat
+C00311349 Muhammad Fahad
+C00297032 Emoshoke Saliu
+C00290944 Gleb Tutubalin  */
+
 ul li{
-    /* display: none; */
     padding: 10px ;
-   
-    /* border-radius: var(--borderradius); */
-    /* cursor: pointer; */
-    
-}
-body{
-    height: 100%;
-    /* width: 500px; */
-    /* border: 2px solid red; */
 }
 .dashboard_sidebar{
     grid-area: sidebar;
@@ -17,15 +17,12 @@ body{
     display: flex;
     flex-direction: column;
     gap: 60px; 
-    height: 100%;
-    /* border: 2px solid red; */
 }
 .logo_name_Container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-   
     width: 100%;
     padding: var(--container_padding);
     gap: 10px;
@@ -33,33 +30,24 @@ body{
 
 .logo{
     font-size: 4rem;
-    color: var(--first_color);
-    
-
+    color: var(--first_color); 
 }
 .logo_name_Container .name{
     font-size: 1rem;
 }
 /* navabr */
-
 .dashboard_navbar ul, li, a {
-    /* display: none; */
     text-decoration: none;
     list-style: none;
     color: black;
     font-weight: bold;
-    /* background-color: ; */
 }
 .dashboard_navbar .main_menu_continer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 15px;
-    border: 2px solid red;
-    padding: 10px;
-   
 }
-
 .main_menu_continer .main_menu:hover {
 background-color: var(--second_color);
 padding: var(--buttonPadding);
@@ -72,13 +60,10 @@ border-radius: var(--border-radius);
 .currency{
     color: var(--second_color);
 }
-
-
-/* for sub menues */
+/* from here the styling for sub-menue is start */
 .submenu{
     display: none;
     padding-left: 35px;
-    
 }
 .submenu.show{
     margin-top: 10px;
@@ -96,7 +81,7 @@ border-radius: var(--border-radius);
     background-color: var(--first_color);
     border-radius: var(--border-radius);
 }
-
+/* animation for sub-menue */
 @keyframes fadeIn {
     from{
         opacity: 0; transform: translate(-5px);
