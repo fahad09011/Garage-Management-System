@@ -45,6 +45,7 @@
                             <div class="income_status">
                                 <div class="income_status_sub_container">
                                     <?php
+                                    // this file contain the total gross income
                                     include './Assets/graph_data/incomeGraphData.php'
                                     ?>
                                     <p>Total gross income</p>
@@ -52,22 +53,24 @@
                           <div id="graph_container1"></div>
                             </div>
                         </div>
-                        <!-- customer  -->
+                        <!-- bookings  -->
                         <div class="graph_container gc2">
                             <div class="income_status">
                                 <div class="income_status_sub_container">
                                 <?php
+                                // this file contain the total number of bookings
                                     include './Assets/graph_data/bookingGraphData.php'
                                     ?><p>Total Garage Bookings</p>
                                 </div>
                                 <div id="graph_container2"></div>
                             </div>
                         </div>
-                        <!-- income -->
+                        <!-- services -->
                         <div class="graph_container gc3">
                             <div class="income_status">
                                 <div class="income_status_sub_container">
                                 <?php
+                                // this file contain the total number of job types
                                     include './Assets/graph_data/jobTypeGraphData.php'
                                     ?><p> All maintenance services</p>
                                 </div>                                 

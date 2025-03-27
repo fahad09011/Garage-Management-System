@@ -10,7 +10,8 @@
     -->
     <?php
 include 'DBconnection.php';
-$sql = "SELECT `Supplier_ID`, `Name`, `Address`, `Telephone`, `Email`, `web_url` FROM `Supplier` WHERE `Delete_Flag` = '0' ;";
+$sql = "SELECT `Supplier_ID`, `Name`, `Address`, `Telephone`, `Email`, `web_url` 
+FROM `Supplier` WHERE `Delete_Flag` = '0' ;";
 // Execute query and fetch all results as associative array
 $result = $con->query($sql);
 $row = $result->fetchAll(PDO::FETCH_ASSOC);

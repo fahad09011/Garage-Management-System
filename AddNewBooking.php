@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $booking_date = $_POST['booking_date'];
     $details = $_POST['details'];
 
-    // $job_type_ids is the array who stores the multiple ids of job types as we set its name in form as name=job_type_id[].
+    // $job_type_ids is the array who stores the multiple ids of job types as we set its 
+    //name in form as name=job_type_id[].
     $job_type_ids = $_POST['job_type_id'];
 
     // make sure the job_type_ids array should not me empty
@@ -31,13 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
     try {
-        // begin transaction is sequence in database operations that work as a single unit all operation in the transaction work as a single unit.
+        // begin transaction is sequence in database operations that work as a single unit all 
+        // operation in the transaction work as a single unit.
         // if All the operatons/queries successfull then commit into the database.
-        // if the each of the operation/query failes ,catch the transaction by calling  rollBack() funcation, to prevent insert any data to database 
+        // if the each of the operation/query failes ,catch the transaction by calling  
+        // rollBack() funcation, to prevent insert any data to database 
         $con->beginTransaction();
         // this query for booking table
-        $insert = $con->prepare("INSERT INTO `Booking`(`Customer_ID`, `Model`, `Registration_Number`, `Mileage`, `Details`, `Origin_Date`, `Booking_Date`) 
-        VALUES (:customer_id, :vehicle_model, :registration_num, :mile_age, :details, :form_date, :booking_date) ");
+        $insert = $con->prepare("INSERT INTO `Booking`(`Customer_ID`, `Model`, 
+        `Registration_Number`, `Mileage`, `Details`, `Origin_Date`, `Booking_Date`) 
+        VALUES (:customer_id, :vehicle_model, :registration_num, :mile_age, :details,
+         :form_date, :booking_date) ");
         $insert->bindParam(':customer_id', $customer_id);
         $insert->bindParam(':vehicle_model', $vehicle_model);
         $insert->bindParam(':registration_num', $registration_num);
@@ -49,11 +54,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($insert->execute()) {
 
             // fetch booking ID from database 
-            //the lastInsertId() is the PHP predefined function for retrieve/fetch the latest Auto generate (value) column from table that is AUTO generated,this function just return the AUTO generated column/ID/any Auto genrated data  , if the the column data is not AUTO generated then it returns false.
+            //the lastInsertId() is the PHP predefined function for retrieve/fetch 
+            //the latest Auto generate (value) column from table that is AUTO generated,
+            //this function just return the AUTO generated column/ID/any Auto genrated data.
+            //if the the column data is not AUTO generated then it returns false.
             $booking_id = $con->lastInsertId();
 
             // this query for adding job type_id and booking_id to job table
-            $insert_to_job = $con->prepare("INSERT INTO `Job`( `Booking_ID`, `Job_Type_ID`) VALUES (:booking_id,:job_type_id) ;");
+            $insert_to_job = $con->prepare("INSERT INTO `Job`( `Booking_ID`, `Job_Type_ID`) 
+            VALUES (:booking_id,:job_type_id) ;");
             // execute query for inserting into job table
             foreach ($job_type_ids as $job_type_id) {
                 $insert_to_job->bindParam(':job_type_id', $job_type_id);

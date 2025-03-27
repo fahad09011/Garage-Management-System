@@ -21,12 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supplier_id'])) {
     $supplier_id = $_POST['supplier_id'];
     try {
         // Check for unpaid invoices
-        $check_invoice = $con->prepare("SELECT COUNT(*) FROM `Invoice` WHERE `Supplier_ID` = :id AND `Status` = 'ISSUED'");
+        $check_invoice = $con->prepare("SELECT COUNT(*) FROM `Invoice` 
+        WHERE `Supplier_ID` = :id AND `Status` = 'ISSUED'");
         $check_invoice->bindParam(':id', $supplier_id);
         $check_invoice->execute();
         $unpaid_invoice = $check_invoice->fetchColumn();
         // Check for open orders (fixed missing AND)
-        $check_order = $con->prepare("SELECT COUNT(*) FROM `Order` WHERE `Supplier_ID` = :id AND `Status` = '0'");
+        $check_order = $con->prepare("SELECT COUNT(*) FROM `Order` 
+        WHERE `Supplier_ID` = :id AND `Status` = '0'");
         $check_order->bindParam(':id', $supplier_id);
         $check_order->execute();
         $open_order = $check_order->fetchColumn();

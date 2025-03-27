@@ -1,3 +1,16 @@
+<!-- 
+    File:           DBconnection.ph
+    Purpose:        contain the databse connectivity
+    Created By:       Muhammad Fahad (c00311349)
+    Group Members :
+                    c00298483 Adam Dowling
+                    C00295140 Taemour Basharat
+                    C00311349 Muhammad Fahad
+                    C00297032 Emoshoke Saliu
+                    C00290944 Gleb Tutubalin  
+      Date:			26/03/2025
+-->
+<!-- header -->
 <?php
 $hostName = "localhost";
 $userName="garageuser";
@@ -13,21 +26,4 @@ try {
 catch (PDOException $e) {
     die("Databse connection failed.: ".$e->getMessage());
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

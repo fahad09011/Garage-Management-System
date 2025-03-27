@@ -24,8 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $supplier_id = $_POST['supplier_id'];
     try {
-        // this is SQL Query for fetch the Supplier details , here i used named placeholder instead of direct insert the variable
-        $fetch_supplier = $con->prepare("SELECT `Supplier_ID`, `Name`, `Address`, `Telephone`, `Email`, `web_url` FROM `Supplier` WHERE `Supplier_ID` =:supplier_id;");
+        // this is SQL Query for fetch the Supplier details , here i used 
+        //named placeholder instead of direct insert the variable
+        $fetch_supplier = $con->prepare("SELECT `Supplier_ID`, `Name`, `Address`,
+         `Telephone`, `Email`, `web_url` FROM `Supplier` WHERE `Supplier_ID` =:supplier_id;");
         $fetch_supplier->bindParam(':supplier_id', $supplier_id);
         $fetch_supplier->execute();
         $row = $fetch_supplier->fetch(PDO::FETCH_ASSOC);

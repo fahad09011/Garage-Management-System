@@ -1,5 +1,6 @@
 // File:                           admin dashboard javaScript
-// Purpose:                         This file handles the how the forms and other pages will display on the dashboard and handle the forms validations
+// Purpose:                         This file handles the how the forms and other pages 
+//                                  will display on the dashboard and handle the forms validations
 //Group Members :
 //									c00298483 Adam Dowling
 //									C00295140 Taemour Basharat
@@ -8,17 +9,23 @@
 //									C00290944 Gleb Tutubalin  
 //  Date:                           20/03/2025
 //Description:                      This file contians
-//1. fetch_Supplier_function():     this function is resnponsible for fetch the Selected supplier's data from databse.
+//1. fetch_Supplier_function():     this function is resnponsible for fetch the 
+//                                  Selected supplier's data from databse.
 
-//2. load_all_drop_downs():         this function is validate the DropDown attributes then pass them to Display_drop_down().
+//2. load_all_drop_downs():         this function is validate the DropDown attributes
+//                                   then pass them to Display_drop_down().
 
-//2(1). Display_drop_down():        this function is responsible for the creation of dropdowns for specific entity according
+//2(1). Display_drop_down():        this function is responsible for the creation
+//                                   of dropdowns for specific entity according
 //                                  to dropdown attributes.
 
-//  3.display_supplier_form();      this function is responsible for displaying the forms dynamically via AJAX according to the sideBar
-//                                  buttons and all the functions that i mention above are called in this function.
+//  3.display_supplier_form();      this function is responsible for displaying 
+//                                  the forms dynamically via AJAX according to the sideBar
+//                                  buttons and all the functions that i mention above are 
+//                                  called in this function.
 
-//4.  form_handler();               this functioin is responsible for submission of form and their data via AJAX and all the
+//4.  form_handler();               this functioin is responsible for submission
+//                                  of form and their data via AJAX and all the
 //                                  form validation are in this function
 
 // this is JavaScript Library for Graph that shon in on dashboard

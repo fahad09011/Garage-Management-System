@@ -60,32 +60,38 @@
                 <!-- Supplier ID -->
                 <div class="inputMain">
                     <label for="id">Supplier's ID: </label>
-                    <input type="text" id="id" placeholder="Supplier's ID" name="supplier_id" readonly>
+                    <input type="text" id="id" placeholder="Supplier's ID" 
+                    name="supplier_id" readonly>
                 </div>
                 <!-- Supplier Name -->
                 <div class="inputMain">
                     <label for="supplier_name">Supplier's Name: </label>
-                    <input type="text" id="supplier_name" placeholder="Enter supplier's name" name="name" required>
+                    <input type="text" id="supplier_name" 
+                    placeholder="Enter supplier's name" name="name" required>
                 </div>
                 <!-- Supplier Email -->
                 <div class="inputMain">
                     <label for="supplier_email">Supplier's Email: </label>
-                    <input type="email" id="supplier_email" placeholder="Enter supplier's email" name="email" required>
+                    <input type="email" id="supplier_email" 
+                    placeholder="Enter supplier's email" name="email" required>
                 </div>
                 <!-- Supplier Telephone -->
                 <div class="inputMain">
                     <label for="supplier_telephone">Supplier's Telephone: </label>
-                    <input type="text" id="supplier_telephone" placeholder="Enter supplier's Telephone" name="telephone" required>
+                    <input type="text" id="supplier_telephone" 
+                    placeholder="Enter supplier's Telephone" name="telephone" required>
                 </div>
                 <!-- Supplier Address -->
                 <div class="inputMain">
                     <label for="supplier_address">Supplier's Address: </label>
-                    <input type="text" id="supplier_address" placeholder="Enter supplier's address" name="address" required>
+                    <input type="text" id="supplier_address" 
+                    placeholder="Enter supplier's address" name="address" required>
                 </div>
                 <!-- Website URL -->
                 <div class="inputMain">
                     <label for="web_url">Website URL: </label>
-                    <input type="url" id="web_url" placeholder="Enter website URL, https://example.com" name="web_url" required>
+                    <input type="url" id="web_url" 
+                    placeholder="Enter website URL, https://example.com" name="web_url" required>
                 </div>
                 <!-- Form Buttons -->
                 <div class="form_buttons">
@@ -96,6 +102,7 @@
                 <p id="message"></p>
             </form>
             <?php
+            // this file contain the supplier list table
             include './suppliersList.php';
             ?>
         </div>
