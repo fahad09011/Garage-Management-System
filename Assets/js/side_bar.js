@@ -1,6 +1,9 @@
 
     // File:           Side bar JavaScript
-    // Purpose:        This fie handle the Side Bar buttons initially the Sub-buutons/Sub-menu of each Main side bar button are hide , they just appear when the user click on main button
+    // Purpose:        This fie handle the Side Bar buttons initially 
+    //                  the Sub-buutons/Sub-menu of each Main side bar 
+    //                  button are hide , they just appear when the user 
+    //                  click on main button
 // Created By :						Muhammad Fahad c00311349    
 //Group Members :
 //									c00298483 Adam Dowling
@@ -26,7 +29,8 @@
                     let isOpen = sub_menu.classList.contains("show");
     
                     //Close all other submenus
-                    document.querySelectorAll(".submenu").forEach(sub => sub.classList.remove("show"));
+                    document.querySelectorAll(".submenu").forEach
+                    (sub => sub.classList.remove("show"));
     
                     // oggle the clicked submenu (show if it was hidden, hide if it was open)
                     if (!isOpen) {

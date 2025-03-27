@@ -209,10 +209,13 @@ let Display_drop_down = (link, drop_down_table, id, text) => {
 
 
 
-// from here the javaScript (AJAX start) for dynamically  display all forms in dashboard ||| And also for send data to database through AJAX
+// from here the javaScript (AJAX start) for dynamically  display all forms in dashboard
+// And also for send data to database through AJAX
 document.addEventListener("DOMContentLoaded", () => {
   // here "event is the perameter of function"
-  //event delegation: Event delegation is a technique in JavaScript where you attach a single event listener to a parent element instead of adding event listeners to multiple child elements. This takes advantage of event bubbling, which allows the event to "bubble up" from a child element to its parent.
+  //event delegation: Event delegation is a technique in JavaScript where you attach a single 
+  //event listener to a parent element instead of adding event listeners to multiple child elements. 
+  // This takes advantage of event bubbling, which allows the event to "bubble up" from a child element to its parent.
   let sidebar = document.querySelector(".dashboard_sidebar");
   sidebar.addEventListener("click", (event) => {
     if (event.target.classList.contains("load-file")) {
